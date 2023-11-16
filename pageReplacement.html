@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .input-field {
+        margin: 10px;
+    }
+
+    #result {
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Simulate Second Chance Page Replacement</h2>
+
+<form id="pageReplacementForm">
+    <label for="frames">Number of Frames:</label>
+    <input type="number" id="frames" name="frames" min="1" required>
+    <br>
+    <label for="pages">Array of Pages (Separated by ,):</label>
+    <input type="text" id="pages" name="pages" pattern="\d+(,\d+)*" required>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="result"></div>
+
+<script src="Algorithms/SecondChance.js">
+</script>
+<div>
+    <a href="main.html" class="button">Back</a>
+</div>
+</body>
+</html>
