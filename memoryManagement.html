@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Partitioning Memory Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="MMstyles.css">
+    <title>Fixed Memory Partitioning Simulation</title>
 </head>
 <body>
-    <h1>Fixed Partitioning Memory Management</h1>
-    <form onsubmit="event.preventDefault(); runSimulation();">
-        <label for="jobs">Number of Jobs:</label>
-        <input type="number" id="jobs" name="jobs" min="1" required>
-        <br>
-        <label for="partition-size">Size of each Job:</label>
-        <input type="number" id="partition-size" name="partition-size" min="1" required>
-        <br>
-        <label for="fixed-partition-size">Fixed Partition Size:</label>
-        <input type="number" id="fixed-partition-size" name="fixed-partition-size" min="1" required>
-        <br>
-        <button type="submit">Run Simulation</button>
-    </form>
-    <p>Total Fragmentation: <span id="total_fragmentation"></span></p>
+    <div class="memory-container">
+        <div class="memory" id="partition1">PARTITION 1 10k(Free)</div>
+        <div class="memory" id="partition2">PARTITION 2 10k(Free)</div>
+        <div class="memory" id="partition3">PARTITION 3 10k(Free)</div>
+        <div class="memory" id="partition4">PARTITION 4 10k(Free)</div>
+    </div>
+    <div class="process-container">
+        <label for="numJobs">Number of Jobs:</label>
+        <input type="number" id="numJobs" min="1" max="4" placeholder="Enter number of jobs">
 
-    <div>
+        <div id="jobSizesContainer"></div>
+
+        <button onclick="createJobInputs()">Generate Job Inputs</button>
+        <button onclick="allocateMemory()">Allocate Memory</button>
+        <button onclick="deallocateMemory()">Deallocate Memory</button>
+
+        <div id="internalFragmentation"></div>
+    </div>
         <a href="main.html" class="button">Back</a>
     </div>
     <script src="Algorithms/FixedPartition.js"></script>

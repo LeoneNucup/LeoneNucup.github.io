@@ -7,6 +7,7 @@
 <body>
     <div id="content">
         <h1>Non-Preemptive Priority</h1>
+        <label>Arrival Time is set to 0ms</label>
         <button onclick="addRow('priorityTable')">Add Process</button>
         <table id="priorityTable">
             <tr>
@@ -16,7 +17,7 @@
             </tr>
         </table>
         <button onclick="nonPreemptivePriorityScheduling()">Run</button>
-
+        <table id="Priotime">
         <p id="PrioWT"></p>
         <p id='PrioTT'></p>
         <h1>Preemptive Round Robin</h1>
@@ -29,6 +30,7 @@
             </tr>
         </table>
         <button onclick="preemptiveRoundRobinScheduling()">Run</button>
+        <p id="Rrtime"></p>
         <p id="RrWT"></p>
         <p id='RrTT'></p>
     </div>
