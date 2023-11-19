@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="MMstyles.css">
     <title>Fixed Memory Partitioning Simulation</title>
 </head>
+
 <body>
     <div class="memory-container">
-        <div class="memory" id="partition1">PARTITION 1 10k(Free)</div>
-        <div class="memory" id="partition2">PARTITION 2 10k(Free)</div>
-        <div class="memory" id="partition3">PARTITION 3 10k(Free)</div>
-        <div class="memory" id="partition4">PARTITION 4 10k(Free)</div>
+        <div class="memory" id="partition1">PARTITION 1 (Free)</div>
+        <div class="memory" id="partition2">PARTITION 2 (Free)</div>
+        <div class="memory" id="partition3">PARTITION 3 (Free)</div>
+        <div class="memory" id="partition4">PARTITION 4 (Free)</div>
     </div>
-    <div class="process-container">
+    <div>
+        <input type="number" id="P1Size" placeholder="Enter Partition 1 Size">
+        <input type="number" id="P2Size" placeholder="Enter Partition 2 Size">
+        <input type="number" id="P3Size" placeholder="Enter Partition 3 Size">
+        <input type="number" id="P4Size" placeholder="Enter Partition 4 Size">
+    </div>
+
+
+    <div>
         <label for="numJobs">Number of Jobs:</label>
-        <input type="number" id="numJobs" min="1" max="4" placeholder="Enter number of jobs">
+        <input type="number" id="numJobs" min="1" max="5" placeholder="Enter number of jobs">
 
-        <div id="jobSizesContainer"></div>
-
-        <button onclick="createJobInputs()">Generate Job Inputs</button>
-        <button onclick="allocateMemory()">Allocate Memory</button>
-        <button onclick="deallocateMemory()">Deallocate Memory</button>
-
-        <div id="internalFragmentation"></div>
     </div>
-        <a href="index.html" class="button">Back</a>
+
+    <div id="jobSizesContainer"></div>
+
+    <div>
+        <button onclick="createJobInputs()">Generate Job Inputs</button>
+        <button onclick="FirstFit()">First Fit</button>
+        <button onclick="BestFit()">Best Fit</button>
+        <button onclick="WorstFit()">Worst Fit</button>
+    </div>
+
+    <div id="internalFragmentation"></div>
+    </div>
+    <a href="index.html" class="button">Back</a>
     </div>
     <script src="Algorithms/FixedPartition.js"></script>
 </body>
+
 </html>
