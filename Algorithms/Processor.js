@@ -11,23 +11,6 @@ function addRow(tableId) {
     }
 }
 
-function generateTimeline(processes) {
-    let timeline = [];
-    let currentTime = 0;
-    let completedProcesses = 0;
-
-    while (completedProcesses < processes.length) {
-        for (let i = 0; i < processes.length; i++) {
-            if (processes[i].burstTime === 0) {
-                timeline.push({ time: currentTime, process: processes[i].process });
-                completedProcesses++;
-            } else {
-                currentTime++;
-                processes[i].burstTime--;
-            }
-        }
-    }
-
     return timeline;
 }
 
