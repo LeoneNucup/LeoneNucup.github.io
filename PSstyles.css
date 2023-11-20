@@ -1,12 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 th, td {
     border: 1px solid #dddddd;
     text-align: center;
@@ -14,7 +9,7 @@ th, td {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: var(--blue);
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
@@ -24,5 +19,5 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #4156A1;
 }

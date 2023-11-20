@@ -1,42 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="PSstyles.css">
     <title>Processor Scheduling</title>
-    <link rel="stylesheet" type="text/css" href="PSstyles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="content">
-        <h1>Non-Preemptive Priority</h1>
-        <label>Arrival Time is set to 0ms</label>
-        <button onclick="addRow('priorityTable')">Add Process</button>
-        <table id="priorityTable">
-            <tr>
-                <th>Process</th>
-                <th>Burst Time</th>
-                <th>Priority</th>
-            </tr>
-        </table>
-        <button onclick="nonPreemptivePriorityScheduling()">Run</button>
-        <table id="Priotime">
-        <p id="PrioWT"></p>
-        <p id='PrioTT'></p>
-        <h1>Preemptive Round Robin</h1>
-        <label>Time Quantum is set to 2ms</label>
-        <button onclick="addRow('roundRobinTable')">Add Process</button>
-        <table id="roundRobinTable">
-            <tr>
-                <th>Process</th>
-                <th>Burst Time</th>
-            </tr>
-        </table>
-        <button onclick="preemptiveRoundRobinScheduling()">Run</button>
-        <p id="Rrtime"></p>
-        <p id="RrWT"></p>
-        <p id='RrTT'></p>
-    </div>
-    <script src="Algorithms/Processor.js"></script>
-    <div class="container">
-        <a href="index.html" class="button">Back</a>
-    </div>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">OpsysFun</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="memoryManagement.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Memory Management</span>
+				</a>
+			</li>
+			<li>
+				<a href="pageReplacement.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="button">Page Replacement</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="processorScheduling.html" >
+					<i class='bx bxs-message-dots' ></i>
+					<span class="button">Processor Scheduling</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+		</ul>
+	</section>
+	<!-- CONTENT -->
+	<section id="content">
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Processor Scheduling</h1>
+					<ul class="breadcrumb">
+						<div class="table-data">
+							<div class="order">
+                            <h2>Non-Preemptive Priority</h2>
+                            <label>Arrival Time is set to 0ms</label>
+                            
+                            <table id="priorityTable">
+                                <tr>
+                                    <th>Process</th>
+                                    <th>Burst Time</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </table>
+							<button onclick="addRow('priorityTable')">Add Process</button>
+							<button onclick="nonPreemptivePriorityScheduling()">Run</button>
+                            <table id="Priotime">
+                            <p id="PrioWT"></p>
+                            <p id='PrioTT'></p>
+							</table>
+							</div>
+						</div>
+					</ul>
+					<ul class="breadcrumb"></ul>
+						<div class="table-data">
+							<div class="order">
+                            <h2>Preemptive Round Robin</h2>
+                            <label>Time Quantum is set to 2ms</label>
+                            <button onclick="addRow('roundRobinTable')">Add Process</button>
+                            <table id="roundRobinTable">
+                                <tr>
+                                    <th>Process</th>
+                                    <th>Burst Time</th>
+                                </tr>
+                            </table>
+							<button onclick="addRow('roundRobinTable')">Add Process</button>
+                            <button onclick="preemptiveRoundRobinScheduling()">Run</button>
+                            <p id="Rrtime"></p>
+                            <p id="RrWT"></p>
+                            <p id='RrTT'></p>
+                        </div>
+                        <script src="Algorithms/Processor.js"></script>
+					</ul>
+				</div>
+			</div>
+							
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="script.js"></script>
 </body>
 </html>
