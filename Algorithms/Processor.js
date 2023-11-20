@@ -11,10 +11,6 @@ function addRow(tableId) {
     }
 }
 
-    return timeline;
-}
-
-
 function nonPreemptivePriorityScheduling() {
     let table = document.getElementById('priorityTable');
     let processes = [];
