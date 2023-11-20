@@ -19,6 +19,14 @@ for (let i = 0; i < frames; i++) {
     secondChance[i] = 0;
 }
 
+let PRTable = '<table border="1"><tr><th>Page</th>';
+
+for (let i = 1; i <= frames; i++) {
+    PRTable += `<th>Frame ${i}</th>`;
+}
+
+PRTable += '<th>Page Faults</th></tr>';
+
 for (let i = 0; i < pages.length; i++) {
     let found = false;
     let replaced = -1;
@@ -61,7 +69,11 @@ for (let i = 0; i < pages.length; i++) {
             break;
         }
     }
+    const pageFault = found ? '' : '*';
+    PRTable += `<tr><td>${pages[i]}</td><td>${frame.join(',')}</td><td>${pageFaults}</td><td>${pageFault}</td></tr>`;
 }
+PRTable += '</table>';
+document.getElementById('PRTable').innerHTML = PRTable;
 
 document.getElementById('result').innerHTML = 'Page Faults: ' + pageFaults;
 }
