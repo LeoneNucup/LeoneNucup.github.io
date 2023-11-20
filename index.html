@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
     <title>OPSYSFUN FINALS WEB APPLICATION</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <a href="memoryManagement.html" class="button">Memory Management</a>
-        <a href="pageReplacement.html" class="button">Page Replacement</a>
-        <a href="processorScheduling.html" class="button">Processor Scheduling</a>
-    </div>
-</body>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bxs-smile"></i>
+        <span class="text">OpsysFun</span>
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="memoryManagement.html">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">Memory Management</span>
+          </a>
+        </li>
+        <li>
+          <a href="pageReplacement.html">
+            <i class="bx bxs-doughnut-chart"></i>
+            <span class="button">Page Replacement</span>
+          </a>
+        </li>
+        <li>
+          <a href="processorScheduling.html">
+            <i class="bx bxs-message-dots"></i>
+            <span class="button">Processor Scheduling</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu"></ul>
+    </section>
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Home Page</h1>
+            <ul class="breadcrumb">
+              <div class="table-data">
+                <div class="order">
+                <h2>Project Title:</h2> 
+                <h3>Operating System Memory and Processor Algorithms Simulation with Documentation <br><br></h3>
+
+                  <h2>Given Memory and CPU Algorithms:</h2> 
+                  <h3>Fixed Partition: BestFit, FirstFit, WorstFit<br>
+                    Page Replacement Policy: Second-Chance <br>
+                    Non-Preemptive CPU Scheduling: Priority <br>
+                    Preemptive CPU Scheduling: Round-Robin
+                    <br><br></h3>
+                  <h2>Members:</h2> 
+                  <h3>Lawrence Cruz <br> Kenneth Iino <br> Leone Nucup <br> Lindley Quiambao</h3></h2>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+
+    <script src="script.js"></script>
+  </body>
 </html>

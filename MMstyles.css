@@ -1,23 +1,46 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-.memory-container {
-    display: flex;
+.memory-container1 {
+    display:flex;
+    flex-direction: row;
+    width:50%;
+    height: 30%;
 }
 
 .memory {
+    width:450px;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+    padding: 5px;
+    margin-right: 10px;
+    flex:1;
 }
 
+input[type=number] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    flex:1;
+}
 
+.process-container {
+    margin-top: 10px;
+}
+
+input[type=number1] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    width: 30%;
+    display: flex;
+}
 button {
-    margin: 5px;
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+button:hover {
+    background-color: #4156A1;
 }

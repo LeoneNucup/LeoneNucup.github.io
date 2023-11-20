@@ -1,28 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="PRstyles.css">
+    <title>Fixed Memory Partitioning Simulation</title>
 </head>
 <body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">OpsysFun</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="memoryManagement.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Memory Management</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="pageReplacement.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="button">Page Replacement</span>
+				</a>
+			</li>
+			<li>
+				<a href="processorScheduling.html" >
+					<i class='bx bxs-message-dots' ></i>
+					<span class="button">Processor Scheduling</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+		</ul>
+	</section>
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Page Replacement</h1>
+					<ul class="breadcrumb">
+						<div class="table-data">
+							<div class="order">
+								<h2>Second Chance</h2> <br>
+								<form id="pageReplacementForm">
+									<label for="frames">Number of Frames:</label>
+									<input type="number" id="frames" name="frames" min="1" required>
+									<br> <br>
+									<label for="pages">Array of Pages (Separated by ,):</label>
+									<input type="text" id="pages" name="pages" pattern="\d+(,\d+)*" required>
+									<br><br>
+									<input type="submit" value="Submit">
+								</form>
+								<div id="PRTable"></div>
+								<div id="result"></div>
+								
+								<script src="Algorithms/SecondChance.js">
+                        </script>
+					</ul>
+				</div>
+			</div>
+			
+							
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	
 
-<h2>Simulate Second Chance Page Replacement</h2>
-
-<form id="pageReplacementForm">
-    <label for="frames">Number of Frames:</label>
-    <input type="number" id="frames" name="frames" min="1" required>
-    <br>
-    <label for="pages">Array of Pages (Separated by ,):</label>
-    <input type="text" id="pages" name="pages" pattern="\d+(,\d+)*" required>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-<div id="PRTable"></div>
-<div id="result"></div>
-
-<script src="Algorithms/SecondChance.js">
-</script>
-<div>
-    <a href="index.html" class="button">Back</a>
-</div>
+	<script src="script.js"></script>
 </body>
 </html>
