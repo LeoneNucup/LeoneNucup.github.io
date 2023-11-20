@@ -25,7 +25,7 @@ function FirstFit() {
     let P4Size = parseInt(document.getElementById("P4Size").value);
 
     let numJobs = parseInt(document.getElementById("numJobs").value);
-    jobs= [];
+    jobs = [];
     for (let i = 1; i <= numJobs; i++) {
         jobs[i] = `Job ${i}`;
     }
@@ -36,14 +36,9 @@ function FirstFit() {
         partition4: { size: P4Size, allocated: false, job: jobs[4] }
     };
     const totalPartitions = Object.keys(partitions).length;
+    console.log(partitions);
     let internalFragmentation = 0;
-
-    for (let partition in partitions) {
-        if (!partitions[partition].allocated) {
-            partitions[partition].allocated = true;
-        }
-    }
-
+    const sortedPartitions = Object.keys(partitions).sort((a, b) => partitions[a].job - partitions[b].job);
     for (let i = 1; i <= totalPartitions; i++) {
         let jobSizeInput = document.getElementById(`jobSize${i}`);
         if (jobSizeInput) {
@@ -55,11 +50,19 @@ function FirstFit() {
 
             let allocated = false;
             //First Fit
-            for (let partition in partitions) {
+            for (let j = 0; j < sortedPartitions.length; j++) {
+                let partition = sortedPartitions[j];
                 if (!partitions[partition].allocated && partitions[partition].size >= jobSize) {
                     partitions[partition].allocated = true;
+                    partitions[partition].job = jobs[i];
                     allocated = true;
+                    internalFragmentation += partitions[`partition${i}`].size - jobSize;
                     break;
+                }
+                if (!partitions[partition].allocated && partitions[partition].size < jobSize) {
+                    partitions[partition].allocated = false;
+                    partitions[partition].job = null;
+                    allocated = false;
                 }
             }
 
@@ -81,7 +84,7 @@ function BestFit() {
     let P4Size = parseInt(document.getElementById("P4Size").value);
 
     let numJobs = parseInt(document.getElementById("numJobs").value);
-    jobs= [];
+    jobs = [];
     for (let i = 1; i <= numJobs; i++) {
         jobs[i] = `Job ${i}`;
     }
@@ -111,11 +114,17 @@ function BestFit() {
                 let partition = sortedPartitions[j];
                 if (!partitions[partition].allocated && partitions[partition].size >= jobSize) {
                     partitions[partition].allocated = true;
+                    internalFragmentation += partitions[`partition${i}`].size - jobSize;
                     partitions[partition].job = jobs[i]; // Store the job information
                     allocated = true;
-
                     break;
                 }
+                if (!partitions[partition].allocated && partitions[partition].size < jobSize) {
+                    partitions[partition].allocated = false;
+                    partitions[partition].job = null;
+                    allocated = false;
+                }
+
             }
             if (!allocated) {
                 internalFragmentation += partitions[`partition${i}`].size - jobSize;
@@ -137,7 +146,7 @@ function WorstFit() {
 
     let numJobs = parseInt(document.getElementById("numJobs").value);
 
-    jobs= [];
+    jobs = [];
     for (let i = 1; i <= numJobs; i++) {
         jobs[i] = `Job ${i}`;
     }
@@ -172,6 +181,11 @@ function WorstFit() {
                     internalFragmentation += partitions[`partition${i}`].size - jobSize;
                     break;
                 }
+                if (!partitions[partition].allocated && partitions[partition].size < jobSize) {
+                    partitions[partition].allocated = false;
+                    partitions[partition].job = null;
+                    allocated = false;
+                }
             }
 
             if (!allocated) {
@@ -185,14 +199,10 @@ function WorstFit() {
 }
 
 function updateMemoryDisplay(partitions) {
-    let x = 1;
-    let numJobs = parseInt(document.getElementById("numJobs").value);
     for (let partition in partitions) {
-        if (x <= numJobs) {
-            let partitionElement = document.getElementById(partition);
-            partitionElement.textContent = `${partition} ${partitions[partition].job} (${partitions[partition].allocated ? 'Allocated' : 'Free'})`;
-            x++;
-        }
+        let partitionElement = document.getElementById(partition);
+        partitionElement.textContent = `${partition} ${partitions[partition].job} (${partitions[partition].allocated ? 'Allocated' : 'Free'})`;
+
     }
 }
 
