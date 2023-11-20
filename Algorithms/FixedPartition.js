@@ -66,9 +66,6 @@ function FirstFit() {
                 }
             }
 
-            if (!allocated) {
-                internalFragmentation += partitions[`partition${i}`].size - jobSize;
-            }
         }
     }
 
@@ -125,9 +122,6 @@ function BestFit() {
                     allocated = false;
                 }
 
-            }
-            if (!allocated) {
-                internalFragmentation += partitions[`partition${i}`].size - jobSize;
             }
 
         }
@@ -188,12 +182,9 @@ function WorstFit() {
                 }
             }
 
-            if (!allocated) {
-                internalFragmentation += partitions[`partition${i}`].size - jobSize;
-            }
         }
     }
-
+    console.log(internalFragmentation);
     updateMemoryDisplay(partitions);
     displayInternalFragmentation(internalFragmentation);
 }
